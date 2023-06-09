@@ -71,6 +71,7 @@ function handleDragOver(e) {
 
 function handleDragLeave(e) {
     this.classList.remove('over');  // this / e.target is previous target element.
+    saveData();
 }
 
 function handleDrop(e) {
@@ -92,12 +93,13 @@ function handleDrop(e) {
     }
     this.classList.remove('over');
     return false;
+    saveData();
 }
 
 function handleDragEnd(e) {
     // this/e.target is the source node.
     this.classList.remove('over');
-
+    saveData();
     /*[].forEach.call(cols, function (col) {
       col.classList.remove('over');
     });*/
